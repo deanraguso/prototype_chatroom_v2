@@ -7,7 +7,14 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "jquery"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(function() {
+    $('#new_room_message').on('ajax:success', function(a, b,c ) {
+      $(this).find('input[type="text"]').val('');
+    });
+  });
