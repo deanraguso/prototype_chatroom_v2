@@ -3,4 +3,10 @@
 
 import { createConsumer } from "@rails/actioncable"
 
-export default createConsumer()
+// export default createConsumer()
+(function() {
+this.App || (this.App = {});
+
+App.cable = ActionCable.createConsumer();
+
+}).call(this);
